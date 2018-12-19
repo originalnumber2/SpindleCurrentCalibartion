@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{312D6A0E-E1D6-4F40-8BEE-FEE4E7BCA209}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SpindleCurrentCalibartion/Modbus.cs">
+    <Files>
+      <File FileName="SpindleCurrentCalibartion/Program.cs" Line="40" Column="48" />
+      <File FileName="SpindleCurrentCalibartion/SpindleMotor.cs" Line="35" Column="26" />
+      <File FileName="SpindleCurrentCalibartion/CsvWriter.cs" Line="18" Column="52" />
+      <File FileName="SpindleCurrentCalibartion/Averager.cs" Line="21" Column="10" />
+      <File FileName="SpindleCurrentCalibartion/NIDaqStrain.cs" Line="2" Column="24" />
+      <File FileName="SpindleCurrentCalibartion/MotorController.cs" Line="105" Column="58" />
+      <File FileName="SpindleCurrentCalibartion/Modbus.cs" Line="158" Column="36" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SpindleCurrentCalibartion PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
