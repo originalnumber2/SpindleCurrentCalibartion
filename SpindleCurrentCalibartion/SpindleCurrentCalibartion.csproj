@@ -52,6 +52,8 @@
     <Compile Include="NIDaqStrain.cs" />
     <Compile Include="MotorController.cs" />
     <Compile Include="Modbus.cs" />
+    <Compile Include="Dyno.cs" />
+    <Compile Include="MovingAverage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
