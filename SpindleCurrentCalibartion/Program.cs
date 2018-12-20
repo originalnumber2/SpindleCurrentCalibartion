@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SpindleCurrentCalibartion
 {
     class Program
     {
-        static NIDaqStrain NIDaq;
+        //static NIDaqStrain NIDaq;
         static CsvWriter Writter;
         static Averager Average;
-        static MotorController Controller;
+        //static MotorController Controller;
+        static Random random = new Random();
         static int DataPoints = 1000;
         //static double[] Speeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800 };
         static double[] Speeds = {100, 200, 300, 400, 500};
@@ -27,32 +29,37 @@ namespace SpindleCurrentCalibartion
             for (int i = 0; i < Speeds.Length; i++)
             {
                 data = TakeRPMData(Speeds[i]);
+                //Writter.AddDoubleArray(data);
                 Averages[i] = Average.GetAverage(data);
                 Console.WriteLine(Averages[i]);
+                Thread.Sleep(100);
             }
             Writter.AddDoubleArray(Averages);
-            Controller.StopSpindle();
+            //Controller.StopSpindle();
         }
 
         private static double[] TakeRPMData(double rpm)
         {
-            Controller.StartSpindle(rpm, true);
+            //Controller.StartSpindle(rpm, true);
             double[] data = new double[DataPoints];
             for (int i = 0; i < DataPoints; i++)
             {
-                double[] rData = NIDaq.ReadUSBData();
-                data[i] = rData[1];
+                //double[] tempData = NIDaq.ReadUSBData();
+                //data[i] = tempData[1];
+                data[i] = random.NextDouble();
             }
             return data;
         }
 
         static void SetUp()
         {
-            NIDaq = new NIDaqStrain();
-            Controller = new MotorController();
+            //NIDaq = new NIDaqStrain();
+            //Controller = new MotorController();
             Writter = new CsvWriter(",", "Spindle.csv");
             Average = new Averager();
-            Controller.ConnSpindle();
+            //Controller.ConnSpindle();
+            String[] header = { "hello", "please", "Work" };
+            Writter.WriteHeader(header);
         }
 
     }

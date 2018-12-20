@@ -36,6 +36,7 @@ namespace SpindleCurrentCalibartion
                 else { NewLine = NewLine + heading; }
             }
             outputfile.WriteLine(NewLine);
+            outputfile.Flush();
         }
 
         //Adds all data from a double array to a file with csvSeperatore between elements
@@ -57,6 +58,7 @@ namespace SpindleCurrentCalibartion
             }
             //Console.WriteLine(NewLine);
             outputfile.WriteLine(NewLine);
+            outputfile.Flush();
         }
 
         //prints data arry from dyno to console. doesnt check that it is the
@@ -67,9 +69,9 @@ namespace SpindleCurrentCalibartion
             Console.WriteLine("YForce: " + dataArray[1]);
             Console.WriteLine("ZForceDyno: " + dataArray[2]);
             Console.WriteLine("TForce: " + dataArray[3]);
-            Console.WriteLine("VAngle: " + dataArray[4]);
-            Console.WriteLine("XYForce: " + dataArray[5]);
-            Console.WriteLine("XYForceAverage: " + dataArray[6]);
+            // Console.WriteLine("VAngle: " + dataArray[4]);
+            //Console.WriteLine("XYForce: " + dataArray[5]);
+            //Console.WriteLine("XYForceAverage: " + dataArray[6]);
             Console.WriteLine("");
             Console.WriteLine("");
 
