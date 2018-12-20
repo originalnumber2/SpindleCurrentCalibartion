@@ -1,1 +1,12 @@
 C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\SpindleCurrentCalibartion.exe.config
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\obj\Debug\SpindleCurrentCalibartion.csprojResolveAssemblyReference.cache
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\SpindleCurrentCalibartion.exe
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\SpindleCurrentCalibartion.pdb
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.Common.dll
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.NiLmClientDLL.dll
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.MStudioCLM.dll
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.Common.xml
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\obj\Debug\SpindleCurrentCalibartion.exe
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\obj\Debug\SpindleCurrentCalibartion.pdb

@@ -41,6 +41,9 @@ namespace SpindleCurrentCalibartion
                 Process.GetCurrentProcess().Kill();
             }
 
+            //Start the Modbus Writer thread
+            ModBusWriteThread = new Thread(new ThreadStart(WriteModbus));
+            ModBusWriteThread.Start();
 
         }
 
@@ -63,25 +66,6 @@ namespace SpindleCurrentCalibartion
                 Thread.Sleep(25);//wait for a period of at least 25ms to send comands to motors on the modbus,
                                  // commands seem to be dropped if sent any faster. J 9/10/2015
             }
-        }
-
-        private void StartAnalogControl()
-        {
-            Thread.Sleep(500);
-            WriteModbusQueue(2, 0x0300, 02, false);//set source of master frequency to be from analog input for Traverse motor
-            WriteModbusQueue(2, 0x010D, 15, false);//set Traverse motor direcction (Fwd/Rev) to be controled digital input terminal DI5
-            WriteModbusQueue(2, 0x0706, 0x02, false);//set Traverse motor to run, but not to set dirrection
-                                                     //30.02 0.0 minimum reverence value 0 to 10 Volts
-                                                     //30.02 10.0 maximum reverence value 0 to 10 Volts
-                                                     //30.03 00 Invert Reverence signal, not inverted
-                                                     //30.07 00 potentiometer offset 0.0-100.0, 0 offset
-                                                     //30.10 00 potentiometer Direction, 00 do not have voltage value control direction
-
-            Thread.Sleep(500);
-            WriteModbusQueue(3, 0x0300, 02, false);//set source of master frequency to be from analog input for lateral motor
-            WriteModbusQueue(3, 0x010D, 15, false);//set lateral motor direcction (Fwd/Rev) to be controled digital input terminal DI5
-            WriteModbusQueue(3, 0x0706, 0x02, false);//set lateral motor to run, but not to set dirrection
-            Thread.Sleep(500);
         }
 
         internal bool WriteModbusQueue(int motor, int address, int data, bool checkreturn)

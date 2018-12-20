@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using NationalInstruments.DAQmx;
 
 namespace SpindleCurrentCalibartion
 {
@@ -93,7 +94,7 @@ namespace SpindleCurrentCalibartion
                    10,  //10v maximum
                    AIVoltageUnits.Volts  //Use volts
                    );
-                USB6008_Reader = new AnalogMultiChannelReader(USB6008_1_AITask.Stream);
+                USB6008_Reader = new AnalogMultiChannelReader(USB6008_AITask.Stream);
                 ////////////////////////////////////////////////////////////
                 USB6008_AOTask = new NationalInstruments.DAQmx.Task();
                 TraverseMotorChannel = USB6008_AOTask.AOChannels.CreateVoltageChannel(
@@ -118,7 +119,7 @@ namespace SpindleCurrentCalibartion
             }
             catch (NationalInstruments.DAQmx.DaqException e)
             {
-                MessageBox.Show("Error?\n\n" + e.ToString(), "NI USB 6008 1 Error");
+                Console.WriteLine("Error?\n\n" + e.ToString(), "NI USB 6008 1 Error");
             }
         }
 
@@ -136,7 +137,7 @@ namespace SpindleCurrentCalibartion
                 }
                 catch (NationalInstruments.DAQmx.DaqException ex)
                 {
-                    MessageBox.Show("Error Reading Analog input for zero button " + ex.Message.ToString());
+                    Console.WriteLine("Error Reading Analog input for zero button " + ex.Message.ToString());
                 }
                 Thread.Sleep(5);
             }

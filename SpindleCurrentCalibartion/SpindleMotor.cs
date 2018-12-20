@@ -32,10 +32,8 @@ namespace SpindleCurrentCalibartion
         internal string ConnectionToggle()
         {
             string message;
-            if (isSpiCon)
-                message = Disconnect();
-            else
-                message = Connect();
+            if (isSpiCon) message = Disconnect();
+            else message = Connect();
             return message;
         }
 
@@ -51,10 +49,13 @@ namespace SpindleCurrentCalibartion
             {
                 isSpiCon = true;
                 message = "Spindle Connected";
+                Console.WriteLine(message);
             }
-            else
+            else {
                 isSpiCon = false;
                 message = "Spindle Failed to connect";
+                Console.WriteLine(message);
+                    }
             return message;
         }
 

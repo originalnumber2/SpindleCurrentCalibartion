@@ -44,7 +44,7 @@ namespace SpindleCurrentCalibartion
             string NewLine = "";
             int i = 1;
 
-            PrintDoubleToConsole(dataArray);
+            //PrintDoubleToConsole(dataArray);
 
             foreach (double data in dataArray)
             {

@@ -65,7 +65,7 @@ namespace SpindleCurrentCalibartion
             }
             else
             {
-               Console.WriteLine("Lateral motor is not connected");
+               Console.WriteLine("Spindle motor is not connected");
             }
         }
 
@@ -81,6 +81,8 @@ namespace SpindleCurrentCalibartion
             {
                 returnMes = returnMes + spindleMotor.ConnectionToggle();
             }
+            GetMotorConnections();
+            UpdateParameters();
             return returnMes;
         }
 
