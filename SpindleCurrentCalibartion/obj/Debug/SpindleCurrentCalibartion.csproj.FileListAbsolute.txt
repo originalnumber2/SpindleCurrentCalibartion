@@ -10,3 +10,5 @@ C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\S
 C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\NationalInstruments.Common.xml
 C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\obj\Debug\SpindleCurrentCalibartion.exe
 C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\obj\Debug\SpindleCurrentCalibartion.pdb
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\MccDaq.dll
+C:\Users\VUWAL\Documents\Visual Studio 2015\Projects\SpindleCurrentCalibartion\SpindleCurrentCalibartion\bin\Debug\MccDaq.xml

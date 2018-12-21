@@ -16,12 +16,12 @@ namespace SpindleCurrentCalibartion
         static Dyno dynomometer;
         //static Random random = new Random();
         static int DataPoints = 1000;
-        //static double[] Speeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800 };
-        static double[] Speeds = {100, 200, 300, 400, 500};
+        static double[] Speeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800 };
+        //static double[] Speeds = {100, 200, 300, 400, 500};
 
         static void Main(string[] args)
         {
-            double[] Averages = new double[2];
+            double[] Averages = new double[4];
 
             SetUp();
             for (int i = 0; i < Speeds.Length; i++)
@@ -31,12 +31,19 @@ namespace SpindleCurrentCalibartion
                 //Writter.AddDoubleArray(data);
                 double[][] data = TakeData();
                 Averages[0] = Average.GetAverage(data[0]);
-                Averages[1] = Average.GetAverage(data[1]);                     
-                Console.WriteLine(Averages[0].ToString() + Averages[1].ToString());
-
+                Averages[1] = Average.GetAverage(data[1]);
+                Averages[2] = Averages[0] * 230;
+                Averages[3] = Averages[1] * Speeds[i] * Math.PI / 30;
+                Controller.StartSpindle(0, true);
+                Console.WriteLine(Averages[0].ToString() + ", " + Averages[1].ToString() + ", " + Averages[2].ToString() + ", " + Averages[3].ToString());
+                Writter.AddDoubleArray(Averages);
+                Thread.Sleep(10000);
+                dynomometer.DynoReset();
+                Thread.Sleep(10000);
+                
             }
-            Writter.AddDoubleArray(Averages);
-            //Controller.StopSpindle();
+            
+            Controller.StopSpindle();
         }
 
         private static double[][] TakeData()
@@ -68,7 +75,8 @@ namespace SpindleCurrentCalibartion
             Controller.ConnSpindle();
             dynomometer.DynoConnect();
             dynomometer.DynoReset();
-            String[] header = { "Current", "Torque" };
+            Thread.Sleep(500);
+            String[] header = { "Current", "Torque", "Power (Current)", "Power (Torque)" };
             Writter.WriteHeader(header);
         }
 

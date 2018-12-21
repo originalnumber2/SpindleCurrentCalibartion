@@ -52,7 +52,7 @@ namespace SpindleCurrentCalibartion
             {
                 //Set up port for controlling the dyno
                 DynoControlPort = new SerialPort();
-                DynoControlPort.PortName = "COM3";
+                DynoControlPort.PortName = "COM4";
                 DynoControlPort.BaudRate = 4800;
                 DynoControlPort.Parity = Parity.None;
                 DynoControlPort.StopBits = StopBits.One;
