@@ -12,14 +12,24 @@ namespace SpindleCurrentCalibartion
     {
 
         String csvSeperator;
-        String csvPath;
+        String csvDir;
+        String csvFile;
         StreamWriter outputfile;
 
-        public CsvWriter(string seperator, string filepath)
+        public CsvWriter(string seperator, string Dir, string file)
         {
             csvSeperator = seperator;
-            csvPath = filepath;
-            outputfile = new StreamWriter(filepath);
+            csvDir = Dir;
+            csvFile = file;
+            try
+            {
+                outputfile = new StreamWriter(Dir + '/' + file);
+            }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                Directory.CreateDirectory(Dir);
+                outputfile = new StreamWriter(Dir + '/' + file);
+            }
         }
 
         public void WriteHeader(String[] header)
