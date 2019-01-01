@@ -34,7 +34,7 @@ namespace SpindleCurrentCalibartion
                 Averages[3] = Averages[1] * 230;
                 Averages[4] = Averages[2] * Speeds[i] * Math.PI / 30;
                 Controller.StartSpindle(0, true);
-                Console.WriteLine(Averages[0].ToString() + ", " + Averages[1].ToString() + ", " + Averages[2].ToString() + ", " + Averages[3].ToString());
+                Console.WriteLine(Averages[0].ToString() + ", " + Averages[1].ToString() + ", " + Averages[2].ToString() + ", " + Averages[3].ToString() + ", " + Averages[4].ToString());
                 Writter.AddDoubleArray(Averages);
                 Thread.Sleep(10000);
                 dynomometer.DynoReset();
