@@ -15,7 +15,7 @@ namespace SpindleCurrentCalibartion
         static int SampleDelay = 10;
         static double[] Speeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800 };
         //static double[] Speeds = {100, 200, 300, 400, 500};
-        static string path = "Data_" + DateTime.Now.ToString("yyyy-MM-dd hh-mm") + "/";
+        static string Dir = "Data_" + DateTime.Now.ToString("yyyy-MM-dd hh-mm");
 
         static void Main(string[] args)
         {
@@ -27,7 +27,7 @@ namespace SpindleCurrentCalibartion
                 Controller.StartSpindle(Speeds[i], true);
                 Thread.Sleep(10000);
                 //Writter.AddDoubleArray(data);
-                double[][] data = TakeData();
+                double[][] data = TakeData(Speeds[i]);
                 Averages[0] = Speeds[i];
                 Averages[1] = Average.GetAverage(data[0]);
                 Averages[2] = Average.GetAverage(data[1]);
@@ -45,9 +45,9 @@ namespace SpindleCurrentCalibartion
             Controller.StopSpindle();
         }
 
-        private static double[][] TakeData(int RPM)
+        private static double[][] TakeData(double RPM)
         {
-            CsvWriter csvWriter = new CsvWriter(",", path + "RPM" + RPM);
+            CsvWriter csvWriter = new CsvWriter(",", Dir, "RPM" + RPM + ".csv");
             string[] header = { "Current", "Torque" };
             csvWriter.WriteHeader(header);
             double[][] data = new double[2][];
@@ -74,7 +74,7 @@ namespace SpindleCurrentCalibartion
             NIDaq = new NIDaqStrain();
             Controller = new MotorController();
             dynomometer = new Dyno();
-            Writter = new CsvWriter(",", path+"Spindle.csv");
+            Writter = new CsvWriter(",", Dir, "Averages.csv");
             Average = new Averager();
             Controller.ConnSpindle();
             dynomometer.DynoConnect();
