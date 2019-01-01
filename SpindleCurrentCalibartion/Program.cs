@@ -31,8 +31,8 @@ namespace SpindleCurrentCalibartion
                 Averages[0] = Speeds[i];
                 Averages[1] = Average.GetAverage(data[0]);
                 Averages[2] = Average.GetAverage(data[1]);
-                Averages[3] = Averages[0] * 230;
-                Averages[4] = Averages[1] * Speeds[i] * Math.PI / 30;
+                Averages[3] = Averages[1] * 230;
+                Averages[4] = Averages[2] * Speeds[i] * Math.PI / 30;
                 Controller.StartSpindle(0, true);
                 Console.WriteLine(Averages[0].ToString() + ", " + Averages[1].ToString() + ", " + Averages[2].ToString() + ", " + Averages[3].ToString());
                 Writter.AddDoubleArray(Averages);
